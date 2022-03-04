@@ -1,0 +1,71 @@
+﻿<Window x:Class="DigitalStickyNote.StickyNote"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DigitalStickyNote"
+        mc:Ignorable="d"
+        Title="No Title - Digital Sticky Note" Height="350" Width="350" 
+        WindowStartupLocation="CenterScreen" 
+        Background="{StaticResource Yellow}" WindowStyle="None" 
+        BorderThickness="2" BorderBrush="{DynamicResource Yellow}" 
+        MouseDown="WindowIsDragged" AllowsTransparency="True" 
+        ResizeMode="CanResizeWithGrip" Topmost="True" >
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="2" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2" />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2" />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="1" Grid.Row="1" TabIndex="3" Click="SettingsButtonClick"
+                x:Name="SettingsButton">
+            ⚙
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right"
+                 Margin="0,0,25,0" TabIndex="1" Click="NewNoteButtonClick"
+                x:Name="NewNote">
+            ➕
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" TabIndex="2"
+               Click="CloseButtonClick"
+                x:Name="CloseButton">
+            ❌
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" TabIndex="2"
+               Click="PinButtonClick"
+                x:Name="Pin">
+            📌
+        </Button>
+
+        <TextBox Grid.Column="1" Grid.Row="2" Background="{x:Null}" 
+                 BorderBrush="{x:Null}" TabIndex="4" FontWeight="Bold" 
+                 FontSize="24" Grid.ColumnSpan="2" TextWrapping="Wrap" 
+                 TextDecorations="{x:Null}"
+                 x:Name="Title">
+            No Title
+        </TextBox>
+
+        <RichTextBox Grid.Column="1" Grid.Row="3"
+                     Grid.ColumnSpan="2" TabIndex="5" AcceptsTab="True" 
+                     Background="{x:Null}" BorderBrush="{x:Null}" UndoLimit="1024" 
+                     Cursor="IBeam" MouseWheel="ScaleTextInRichtext"
+                     x:Name="Text"/>
+
+    </Grid>
+</Window>
