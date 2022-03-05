@@ -22,6 +22,24 @@ namespace DigitalStickyNote
         public Settings()
         {
             InitializeComponent();
+
+            // load fonts.
+            int i = 0;
+            bool foundSegoe = false;
+            foreach (var font in Fonts.SystemFontFamilies)
+            {
+                if (font.Source.StartsWith("Segoe UI") && !foundSegoe)
+                {
+                    FontCombo.SelectedIndex = i;
+                    foundSegoe = true;
+                }
+                i++;
+                FontCombo.Items.Add(new TextBlock()
+                {
+                    Text = font.Source,
+                    FontFamily = font
+                });
+            }
         }
     }
 }

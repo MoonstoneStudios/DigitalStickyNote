@@ -4,5 +4,21 @@
     <SolidColorBrush x:Key="Yellow">
         #FFFFE66E
     </SolidColorBrush>
-    
+
+    <SolidColorBrush x:Key="Magenta">
+        #FFFE9EFF
+    </SolidColorBrush>
+
+    <SolidColorBrush x:Key="Green">
+        #FF6EFF70
+    </SolidColorBrush>
+
+    <SolidColorBrush x:Key="Salmon">
+        #FFFB9C98
+    </SolidColorBrush>
+
+    <SolidColorBrush x:Key="Blue">
+        #FF98A8FF
+    </SolidColorBrush>
+
 </ResourceDictionary>

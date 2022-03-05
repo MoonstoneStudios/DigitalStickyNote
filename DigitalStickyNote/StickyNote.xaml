@@ -8,7 +8,7 @@
         Title="No Title - Digital Sticky Note" Height="350" Width="350" 
         WindowStartupLocation="CenterScreen" 
         Background="{StaticResource Yellow}" WindowStyle="None" 
-        BorderThickness="2" BorderBrush="{DynamicResource Yellow}" 
+        BorderThickness="2" BorderBrush="{StaticResource Yellow}" 
         MouseDown="WindowIsDragged" AllowsTransparency="True" 
         ResizeMode="CanResizeWithGrip" Topmost="True" >
     <Grid>
@@ -54,9 +54,10 @@
         </Button>
 
         <TextBox Grid.Column="1" Grid.Row="2" Background="{x:Null}" 
-                 BorderBrush="{x:Null}" TabIndex="4" FontWeight="Bold" 
-                 FontSize="24" Grid.ColumnSpan="2" TextWrapping="Wrap" 
+                 BorderBrush="{x:Null}" TabIndex="4" Grid.ColumnSpan="2" 
+                 TextWrapping="Wrap" 
                  TextDecorations="{x:Null}"
+                 Style="{StaticResource HeaderBox}"
                  x:Name="Title">
             No Title
         </TextBox>
@@ -65,7 +66,8 @@
                      Grid.ColumnSpan="2" TabIndex="5" AcceptsTab="True" 
                      Background="{x:Null}" BorderBrush="{x:Null}" UndoLimit="1024" 
                      Cursor="IBeam" MouseWheel="ScaleTextInRichtext"
-                     x:Name="Text"/>
+                     x:Name="Text"
+                     Margin="0,0,0,8"/>
 
     </Grid>
 </Window>

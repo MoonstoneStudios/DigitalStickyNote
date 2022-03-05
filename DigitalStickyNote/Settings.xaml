@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DigitalStickyNote"
         mc:Ignorable="d"
-        Title="Settings" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Settings" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
+        >
     <Grid>
 
         <Grid.ColumnDefinitions>
 
             <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="10" />
 
@@ -23,17 +23,142 @@
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
 
-        <StackPanel 
-            Grid.Column="1" Grid.Row="1"  
-            Orientation="Vertical"
-            MinWidth="100" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
-            <Button>
-                Global Settings
-            </Button>
-            <Button>
-                No Title
-            </Button>
-        </StackPanel>
+        <ScrollViewer Grid.Column="1" Grid.Row="1">
+
+            <TabControl TabStripPlacement="Left" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" >
+
+                <TabItem Header="Global Settings">
+
+                    <StackPanel Orientation="Vertical" Margin="20,10,20,0">
+
+                        <TextBlock FontWeight="Bold" FontSize="24">
+                            Global Settings
+                        </TextBlock>
+
+                        <TextBlock>
+                            These will be the new defaults for when a new note is created.
+                        </TextBlock>
+
+                        <Separator Margin="5,10" />
+
+                        <TextBlock FontWeight="Bold" FontSize="20">
+                            Color
+                        </TextBlock>
+
+                        <StackPanel>
+
+                            <TextBlock>
+                                Default Note Color
+                            </TextBlock>
+
+                            <ComboBox SelectedIndex="0" x:Name="ColorCombo">
+
+                                <ComboBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{DynamicResource Yellow}" 
+                                                    Width="20" Height="20"/>
+                                        <TextBlock Margin="5,0,0,0">
+                                            Yellow
+                                        </TextBlock>
+                                    </StackPanel>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{StaticResource Magenta}" 
+                                                    Width="20" Height="20"/>
+                                        <TextBlock Margin="5,0,0,0">
+                                            Magenta
+                                        </TextBlock>
+                                    </StackPanel>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{StaticResource Blue}" 
+                                                    Width="20" Height="20"/>
+                                        <TextBlock Margin="5,0,0,0">
+                                            Blue
+                                        </TextBlock>
+                                    </StackPanel>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{StaticResource Green}" 
+                                                    Width="20" Height="20"/>
+                                        <TextBlock Margin="5,0,0,0">
+                                            Green
+                                        </TextBlock>
+                                    </StackPanel>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{StaticResource Salmon}" 
+                                                    Width="20" Height="20"/>
+                                        <TextBlock Margin="5,0,0,0">
+                                            Salmon
+                                        </TextBlock>
+                                    </StackPanel>
+                                </ComboBoxItem>
+                                
+                            </ComboBox>
+                                
+                        </StackPanel>
+
+                        <Separator Margin="5,10" />
+
+                        <TextBlock FontWeight="Bold" FontSize="20">
+                            Text
+                        </TextBlock>
+
+                        <TextBlock>
+                            Default Font
+                        </TextBlock>
+
+                        <ComboBox x:Name="FontCombo" />
+
+                        <TextBlock>
+                            Default Font Weight
+                        </TextBlock>
+
+                        <ComboBox x:Name="FontWeightCombo" />
+
+                        <Separator Margin="5,10" />
+
+                        <TextBlock FontWeight="Bold" FontSize="20">
+                            Behavior
+                        </TextBlock>
+
+                        <CheckBox IsChecked="True" x:Name="ShouldNotesStartPinned">
+                            Notes Start Pinned
+                        </CheckBox>
+
+                        <CheckBox IsChecked="True" x:Name="ShouldNotesStartWithComputer">
+                            Start Digital Sticky Note When Computer Starts
+                        </CheckBox>
+
+                        <CheckBox IsChecked="True" x:Name="ShouldNotesStartInTray">
+                            Start Digital Sticky Note In System Tray
+                        </CheckBox>
+
+                        <CheckBox IsChecked="True" x:Name="ShouldNotesAutoSave">
+                            Notes Save After Key Stroke. If Unchecked, They Save On Close.
+                        </CheckBox>
+
+                        <CheckBox IsChecked="True" x:Name="ShouldNotesSpellcheck">
+                            Spellcheck On Notes.
+                        </CheckBox>
+
+                    </StackPanel>
+
+                </TabItem>
+
+
+            </TabControl>
+
+        </ScrollViewer>
 
     </Grid>
 </Window>
