@@ -13,5 +13,15 @@ namespace DigitalStickyNote
     /// </summary>
     public partial class App : Application
     {
+        /// <summary>
+        /// The global settings.
+        /// </summary>
+        public static Settings GlobalSettings { get; private set; }
+
+        public App()
+        {
+
+        }
+
     }
 }

@@ -80,7 +80,7 @@ namespace DigitalStickyNote
 
         private void SettingsButtonClick(object sender, RoutedEventArgs e)
         {
-            Settings s = new Settings();
+            SettingsWindow s = new SettingsWindow();
             s.Topmost = true;
             s.Title = $"{Title.Text} - Settings";
             s.Show();
