@@ -67,7 +67,21 @@
                      Background="{x:Null}" BorderBrush="{x:Null}" UndoLimit="1024" 
                      Cursor="IBeam" MouseWheel="ScaleTextInRichtext"
                      x:Name="Text"
-                     Margin="0,0,0,8"/>
+                     Margin="0,0,0,8">
+            <RichTextBox.ContextMenu>
+                <ContextMenu>
+                     <!--https://stackoverflow.com/a/20420727-->
+                    <MenuItem Command="ApplicationCommands.Cut"/>
+                    <MenuItem Command="ApplicationCommands.Copy"/>
+                    <MenuItem Command="ApplicationCommands.Paste"/>
+                    <MenuItem Command="EditingCommands.ToggleBullets" 
+                              InputGestureText="Ctrl+Shift+L"/>
+                    <MenuItem Command="EditingCommands.ToggleNumbering" 
+                              InputGestureText="Ctrl+Shift+N"/>
+                </ContextMenu>
+            </RichTextBox.ContextMenu>
+            
+        </RichTextBox>
 
     </Grid>
 </Window>
